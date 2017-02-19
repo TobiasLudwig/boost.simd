@@ -11,6 +11,7 @@
 
 #include <boost/simd/detail/overload.hpp>
 #include <boost/simd/detail/nsm.hpp>
+#include <boost/simd/function/insert.hpp>
 
 #ifdef BOOST_MSVC
 # pragma warning(push)
