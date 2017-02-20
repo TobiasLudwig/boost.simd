@@ -21,12 +21,12 @@
 
 #if defined(NSM_ASSUME_INCOMPLETE_STD)
 #include <boost/type_traits.hpp>
-namespace nsm { 
+namespace nsm {
   namespace type_traits = boost;
 }
 #else
 #include <type_traits>
-namespace nsm { 
+namespace nsm {
   namespace type_traits = std;
 }
 #endif
@@ -991,12 +991,12 @@ namespace nsm
   {};
 
   template<typename C, typename T, typename F>
-  inline typename std::enable_if<C::value,T&&>::type select(T&& t, F&&)
+  BOOST_FORCEINLINE typename std::enable_if<C::value,T&&>::type select(T&& t, F&&)
   {
     return std::forward<T>(t);
   }
   template<typename C, typename T, typename F>
-  inline typename std::enable_if<!C::value,F&&>::type select(T&&, F&& f)
+  BOOST_FORCEINLINE typename std::enable_if<!C::value,F&&>::type select(T&&, F&& f)
   {
     return std::forward<F>(f);
   }
