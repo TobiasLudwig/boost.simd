@@ -13,7 +13,8 @@
 namespace boost { namespace simd
 {
   /*!
-    @brief Stream a value in memory
+    @ingroup group-memory
+    Stream a value in memory
 
     Store a given value into an arbitrary memory location referenced by either
     a pointer or a pointer and an offset without polluting the caches.
@@ -30,16 +31,12 @@ namespace boost { namespace simd
     @param ptr    Memory location to stream @c val to
     @param offset Optional memory offset.
   **/
-  template<typename Value, typename Pointer, typename Offset>
-  void stream(Value const& val, Pointer const& ptr, Offset const& offset)
-  {}
+  template<typename Value, typename Pointer, typename Offset> void stream(Value const& val, Pointer const& ptr, Offset const& offset) {}
 
   /*!
     @overload
-  */
-  template<typename Value, typename Pointer>
-  void stream(Value const& val, Pointer const& ptr)
-  {}
+  **/
+  template<typename Value, typename Pointer> void stream(Value const& val, Pointer const& ptr) {}
 } }
 #endif
 
